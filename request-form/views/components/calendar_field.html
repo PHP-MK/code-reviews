@@ -1,0 +1,15 @@
+<!--suppress XmlInvalidId -->
+<label for="{{ field.name }}">
+    {% if field.tooltip_active == 1 %}
+    <i class="circular info icon link js-form-tooltip" data-content="{{ field.tooltip }}" data-variation="small"></i>
+    {% endif %}
+    {{ field.label }}
+</label>
+
+
+<div class="ui calendar" id="{{ field.name }}_picker">
+    <div class="ui input left icon">
+        <i class="calendar icon"></i>
+        <input value="{{ field.value|raw }}"  name="{{ field.name }}" id="{{ field.name }}" placeholder="{{ field.placeholder }}" >
+    </div>
+</div>

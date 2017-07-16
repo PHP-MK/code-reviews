@@ -1,0 +1,12 @@
+<!--suppress XmlInvalidId -->
+<label for="{{ field.name }}">
+    {% if field.tooltip_active == 1 %}
+    <i class="circular info icon link js-form-tooltip" data-content="{{ field.tooltip }}" data-variation="small"></i>
+    {% endif %}
+    {{ field.label }}
+</label>
+
+
+<input  value="{{ field.value|raw }}" type="number" name="{{ field.name }}" id="{{ field.name }}" placeholder="{{ field.placeholder }}" title="" >
+
+

@@ -1,0 +1,16 @@
+<!--suppress XmlInvalidId -->
+<label for="{{ field.name }}">
+    {% if field.tooltip_active == 1 %}
+    <i class="circular info icon link js-form-tooltip" data-content="{{ field.tooltip }}" data-variation="small"></i>
+    {% endif %}
+    {{ field.label }}
+</label>
+
+
+<div class="ui fluid category search js-search-{{ field.name }}">
+    <div class="ui icon input">
+        <input type="text" value="{{ field.value|raw }}" name="{{ field.name }}" id="{{ field.name }}"  class="prompt" placeholder="Search... (min 3 characters)" >
+        <i class="search icon"></i>
+    </div>
+    <div class="results"></div>
+</div>
