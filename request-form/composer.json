@@ -1,0 +1,29 @@
+{
+  "name": "NR/rocap",
+  "description": "Resourcing & Organization Change Approval Panel",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Lukasz Dembowski",
+      "email": "lukasz.dembowski@networkrail.co.uk"
+    }
+  ],
+  "require": {
+    "twig/twig": "1.33.2",
+    "phpunit/phpunit": "~4.0",
+    "illuminate/database": "4.1.30",
+    "rdlowrey/auryn": "1.4.2",
+    "phpmailer/phpmailer": "5.2.23",
+    "robmorgan/phinx": "0.8.1",
+    "klein/klein": "^2.1",
+    "vlucas/valitron": "^1.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "app\\": "app/",
+      "test\\": "test/"
+
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<!--suppress XmlInvalidId -->
+<label for="{{ field.name }}">
+    {% if field.tooltip_active == 1 %}
+    <i class="circular info icon link js-form-tooltip" data-content="{{ field.tooltip }}" data-variation="small"></i>
+    {% endif %}
+
+    {{ field.label }}
+</label>
+
+<select name="{{ field.name }}" id="{{ field.name }}" title="" class="ui fluid dropdown">
+    <option value="">-- select --</option>
+    {% for key, value in field.options %}
+    <option value="{{ key }}"
+            {% if field.value == key %}
+            selected
+            {% endif %}>
+        {{ value }}</option>
+    {% endfor %}
+</select>

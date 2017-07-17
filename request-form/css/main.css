@@ -1,0 +1,23 @@
+
+.clean-container {
+    border: 0!important;
+     background: transparent!important;
+     width: 100%!important;
+     box-shadow: none!important;
+     margin: auto;
+    padding: 2px!important;
+     position: relative;
+ }
+
+#banner #logo {
+    margin-top: -97px!important;
+}
+
+
+.rs-header {
+    color:#598499!important;
+}
+
+.small-label-text {
+    font-size: .8em!important;
+}

@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+# Turn on the engine:
+RewriteEngine on
+
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,QSA,L]
+
+# Redirect certain paths to index.php:
+RewriteCond %{REQUEST_URI} !^index.php
+RewriteCond %{REQUEST_URI} !check-session.php
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteRule (.*)$ index.php?page=$1 [L,QSA]
+
+# Redirect certain paths to index.php:
+RewriteCond %{REQUEST_URI} !^index.php
+RewriteCond %{REQUEST_URI} !check-session.php
+RewriteCond %{REQUEST_URI} project
+#RewriteRule (.*)$ index.php?page=$1 [L,QSA]
+
+# Add trailing slash to directories (fix folder issue)
+RewriteCond %{REQUEST_FILENAME} !/$
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule (.*)$ $1/ [L]
+</IfModule>

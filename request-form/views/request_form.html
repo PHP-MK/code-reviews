@@ -1,0 +1,270 @@
+<div class="section">
+    <div class="inner">
+
+
+
+<div class="ui container clean-container">
+
+
+    <form class="ui small form js-request-form" action="" method="post" >
+
+        <h3 class="ui dividing header rs-header">Submission Details </h3>
+        <div class="fields three equal width ">
+
+            <div class="field required">
+                {% include 'components/select_field.html' with {'field': config.field.vacancy_type} %}
+            </div>
+
+            <div class="field required">
+                {% include 'components/select_field.html' with {'field': config.field.hiring_manager} %}
+            </div>
+
+
+            <div class="field required">
+                {% include 'components/select_field.html' with {'field': config.field.hiring_type} %}
+            </div>
+
+        </div>
+
+
+        <h3 class="ui dividing header rs-header">Post Details</h3>
+
+            <div class="fields three equal width ">
+
+                <div class="field required">
+                    {% include 'components/select_field.html' with {'field': config.field.upn} %}
+                </div>
+
+                <div class="field required">
+                    {% include 'components/select_field.html' with {'field': config.field.job_title} %}
+                </div>
+
+                <div class="field required">
+                    {% include 'components/select_field.html' with {'field': config.field.company_function} %}
+                </div>
+
+            </div>
+
+
+            <div class="fields two equal width ">
+
+                <div class="field required">
+                    {% include 'components/select_field.html' with {'field': config.field.work_status} %}
+                </div>
+
+                <div class="field required">
+                    {% include 'components/select_field.html' with {'field': config.field.job_band} %}
+                </div>
+
+
+                <div class="field required">
+                    {% include 'components/search_field.html' with {'field': config.field.job_location} %}
+                </div>
+
+            </div>
+
+
+        <div class="fields three equal width ">
+
+            <div class="field required">
+                    {% include 'components/select_field.html' with {'field': config.field.safety_critical} %}
+            </div>
+
+            <div class="field required">
+                    {% include 'components/select_field.html' with {'field': config.field.statutory} %}
+            </div>
+
+
+            <div class="field required">
+                    {% include 'components/select_field.html' with {'field': config.field.headcount_impact} %}
+            </div>
+
+        </div>
+
+
+        <div class="fields ">
+            <div class="field ten wide required">
+                {% include 'components/textarea_field.html' with {'field': config.field.headcount_impact_explanation} %}
+            </div>
+        </div>
+
+
+
+        <h3 class="ui dividing header rs-header">Founding</h3>
+
+        <div class="fields two equal width ">
+
+
+            <div class="field required">
+                {% include 'components/search_field.html' with {'field': config.field.cost_centre} %}
+            </div>
+
+
+            <div class="field required">
+                {% include 'components/select_field.html' with {'field': config.field.operating_expense} %}
+            </div>
+
+        </div>
+
+
+        <div class="fields ">
+            <div class="field ten wide required">
+
+                {% include 'components/textarea_field.html' with {'field': config.field.founding_explain} %}
+
+            </div>
+        </div>
+
+
+        <h3 class="ui dividing header rs-header">Reason for requirement</h3>
+        <div class="fields two equal width ">
+
+            <div class="field required">
+                {% include 'components/select_field.html' with {'field': config.field.reason_for_requirement} %}
+            </div>
+
+            <div class="field">
+                {% include 'components/input_field.html' with {'field': config.field.person_replacing} %}
+            </div>
+
+        </div>
+
+
+        <div class="fields ">
+            <div class="field ten wide required">
+                {% include 'components/textarea_field.html' with {'field': config.field.reason_for_requirement_explain} %}
+            </div>
+        </div>
+
+
+
+<section id="js-contractor-section-container" ></section>
+        <script id="js-contractor-section" type="text/x-handlebars-template">
+                <h3 class="ui dividing header rs-header">Contractor and contractor extensions only (day rate)</h3>
+
+
+                <div class="fields three equal width ">
+
+                    <div class="field required">
+                        {% include 'components/calendar_field.html' with {'field': config.field.start_date} %}
+                    </div>
+
+                    <div class="field required">
+                        {% include 'components/calendar_field.html' with {'field': config.field.start_date} %}
+                    </div>
+
+                    <div class="field">
+                        {% include 'components/input_field_disabled.html' with {'field': config.field.contract_duration} %}
+                    </div>
+
+                </div>
+
+
+                <div class="fields two equal width ">
+
+
+                    <div class="field required">
+                        {% include 'components/input_field.html' with {'field': config.field.minimal_pay_rate} %}
+
+                    </div>
+
+                    <div class="field">
+                        {% include 'components/input_field.html' with {'field': config.field.median_pay_rate} %}
+                    </div>
+
+                </div>
+
+
+                <div class="fields ">
+                    <div class="field ten wide required">
+                        {% include 'components/input_field.html' with {'field': config.field.contractor_name} %}
+                    </div>
+                </div>
+
+
+                <div class="fields ">
+                    <div class="field ten wide required">
+                        {% include 'components/textarea_field.html' with {'field': config.field.contractor_experience_explain} %}
+                    </div>
+                </div>
+        </script>
+
+
+        <h3 class="ui dividing header rs-header">Alternatives to recruitment considered</h3>
+        <div class="fields two equal width ">
+
+            <div class="field required">
+                {% include 'components/input_field.html' with {'field': config.field.relocating_work} %}
+            </div>
+
+            <div class="field required">
+                {% include 'components/input_field.html' with {'field': config.field.review_workload} %}
+            </div>
+
+        </div>
+
+        <div class="fields two equal width ">
+
+            <div class="field required">
+                {% include 'components/input_field.html' with {'field': config.field.secondment_placement} %}
+            </div>
+
+            <div class="field required">
+                {% include 'components/input_field.html' with {'field': config.field.redeployment} %}
+            </div>
+
+        </div>
+
+
+        <h3 class="ui dividing header rs-header">Business justification </h3>
+        <div class="fields two equal width">
+
+            <div class="field required">
+                {% include 'components/textarea_field.html' with {'field': config.field.role_explain} %}
+            </div>
+
+            <div class="field required">
+                {% include 'components/textarea_field.html' with {'field': config.field.safety_impact} %}
+            </div>
+
+        </div>
+
+        <div class="fields two equal width">
+
+            <div class="field required">
+                {% include 'components/textarea_field.html' with {'field': config.field.performance} %}
+            </div>
+
+            <div class="field required">
+                {% include 'components/textarea_field.html' with {'field': config.field.team_impact} %}
+            </div>
+
+        </div>
+
+
+        <div class="fields two equal width">
+
+            <div class="field required">
+                {% include 'components/textarea_field.html' with {'field': config.field.reputation_impact} %}
+            </div>
+
+            <div class="field required">
+                {% include 'components/textarea_field.html' with {'field': config.field.advertise_externally} %}
+            </div>
+
+        </div>
+
+        <input type="hidden" name="csr_token" value=" {{ config.csr_token.value }} " />
+
+
+        <button class="ui button blue" type="submit">Submit</button>
+
+        <div class="ui error message"></div>
+    </form>
+
+</div>
+
+
+
+</div>
+</div>
