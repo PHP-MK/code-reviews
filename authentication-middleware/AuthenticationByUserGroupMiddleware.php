@@ -14,7 +14,7 @@ class AuthenticationByUserGroupMiddleware extends AuthenticationPortalMiddleware
     /**
      * Is Admin - Check if the user is an admin user.
      *
-     * @return bool
+     * @return bool True if the user is admin
      */
     public function isAdmin()
     {

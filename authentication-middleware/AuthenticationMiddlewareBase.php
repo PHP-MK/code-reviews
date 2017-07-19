@@ -17,7 +17,7 @@ abstract class AuthenticationMiddlewareBase implements AuthenticationMiddlewareI
     /**
      * Constructor - Pull in an instance of the Application.
      *
-     * @param Slim $app
+     * @param Slim $app Instance of the Slim Application
      */
     public function __construct(Slim $app)
     {
@@ -27,15 +27,13 @@ abstract class AuthenticationMiddlewareBase implements AuthenticationMiddlewareI
     /**
      * Not Authenticated - Inform the user that they require authentication.
      *
-     * @return \Slim\Http\Response
+     * @return \Slim\Http\Response Json response
      */
     public function notAuthenticated()
     {
         $errorResponse = array(
             'message' => 'Requires authentication'
         );
-        $this->app->response->headers->set('Content-Type', 'application/json; charset=utf-8;');
-        $this->app->halt(401, json_encode($errorResponse, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
-        return $this->app->response;
+        return $this->app->response->withStatus(401)->withJson($errorResponse);
     }
 }

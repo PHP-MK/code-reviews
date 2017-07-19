@@ -23,8 +23,8 @@ abstract class AuthenticationPortalMiddlewareBase extends AuthenticationMiddlewa
     /**
      * Constructor - Pull in the dependencies.
      *
-     * @param Slim $app
-     * @param AuthController $authController
+     * @param Slim           $app            Instance of the Slim Application
+     * @param AuthController $authController Instance of the Authorisation controller
      */
     public function __construct(Slim $app, AuthController $authController)
     {
@@ -38,8 +38,9 @@ abstract class AuthenticationPortalMiddlewareBase extends AuthenticationMiddlewa
      * Check the user has access to all groups in $groups
      * for a given system based on their session.
      *
-     * @param array $groups
-     * @return bool
+     * @param array $groups An array of integer group ids relating to the system
+     *
+     * @return bool True if the user has access to all groups in $groups
      */
     public function checkGroupAccess(array $groups)
     {
