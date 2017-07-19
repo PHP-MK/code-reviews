@@ -8,7 +8,7 @@ The code is limited to php version 5.3.10.
 ## Usage
 
 Instantiate the middleware to authenticate by Portal user group.
-```angular2html
+```
 $authByGroup = new AuthenticationByUserGroupMiddleware($app, $authController);
 ```
 

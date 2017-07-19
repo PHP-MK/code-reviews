@@ -12,7 +12,7 @@ interface AuthenticationMiddlewareInterface
     /**
      * Not Authenticated - Inform the user that they require authentication.
      *
-     * @return \Slim\Http\Response
+     * @return \Slim\Http\Response Json response
      */
     public function notAuthenticated();
 }
